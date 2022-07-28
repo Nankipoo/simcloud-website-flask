@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- IMPORT FAVICON -->
+
+  <link rel="icon
+  " href="favicon/favicon-48x48.png" />
+
+  <!-- STYLES CSS -->
+
+  <link rel="stylesheet" href="static/register-styles.css" />
+
+  <!-- BOOTSTRAP 4.0 CSS -->
+
+  <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <title>
+    Sim Cloud :: Bulk Simcard Recharge Portal :: Airtime & Data Recharges
+  </title>
+</head>
+
+<body onload="disableSubmit()">
+  <!-- NAVIGATION BAR -->
+
+  <div class="navigation-bar">
+    <nav class="bar-nav navbar navbar-expand-lg navbar-light fixed-top navigation-bar-background">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img class="logo-image" src="images/sim-cloud-logo-small.png" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('index')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('login')}}">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- REGISTER -->
+
+  <div class="register-main">
+    <div class="container custom-blue-background">
+      <h1 class="whitesmoke-heading-xxlarge">Register an Account</h1>
+      <form>
+        <!--name-->
+
+        <div class="form-group">
+          <label class="whitesmoke-heading-xlarge" for="firstname">Name</label>
+          <input type="text" class="form-control" id="firstname" placeholder="Name" />
+        </div>
+
+        <!--surname-->
+
+        <div class="form-group">
+          <label class="whitesmoke-heading-xlarge" for="surname">Surname</label>
+          <input type="text" class="form-control" id="surname" placeholder="Surname" />
+        </div>
+
+        <!--cell number-->
+
+        <div class="form-group">
+          <label class="whitesmoke-heading-xlarge" for="cell_number">Cell Number</label>
+          <input type="text" class="form-control" id="cell_number" placeholder="Cell Number" />
+        </div>
+
+        <!--id number-->
+
+        <div class="form-group">
+          <label for="idNumber">ID Number</label>
+          <input type="text" class="form-control" id="id_number" placeholder="ID Number" />
+        </div>
+
+        <!--email-->
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" />
+        </div>
+
+        <!--business name-->
+
+        <div class="form-group">
+          <label for="business_name">Business Name (optional)</label>
+          <input type="text" class="form-control" id="business_name" placeholder="Business Name" />
+        </div>
+
+        <!--business registration number (optional)-->
+
+        <div class="form-group">
+          <label for="business_registration_number">Business Registration Number (optional)</label>
+          <input type="text" class="form-control" id="business_registration_number" placeholder="Business Name" />
+        </div>
+
+        <!--vat number (optional)-->
+
+        <div class="form-group">
+          <label for="vat_number">VAT Number (optional)</label>
+          <input type="text" class="form-control" id="vat_number" placeholder="VAT Number" />
+        </div>
+
+        <!--address-->
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="Address" />
+        </div>
+
+        <!--password-->
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" />
+        </div>
+
+        <!--confirm password-->
+
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" />
+        </div>
+
+        <div class="form-group">
+          <div class="form-check mt-4">
+            <input type="checkbox" class="form-check-input" name="terms" onchange="activateButton(this)">
+            <label class="form-check-label" for="terms">I agree to your <a href="terms-and-conditions.html"
+                target="_blank">Terms and Conditions</a>.</label>
+          </div>
+        </div>
+
+        <div><button class="btn btn-primary submit-button" id="register_account" type="submit" name="register">Register Account</button></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CREDIT FOOTER -->
+
+  <footer>
+    <div class="container">
+      <p class="whitesmoke-text-credits">
+        Powered by FREEPAID (PTY) LTD. 2022 | Office Number: 087 073 6555
+        <br />
+        104, Building Five, Tygervalley Chambers, 27 Willie van Schoor Drive,
+        Bellville, Western Cape
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP 4.0, JQUERY 3.2.1 JS -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- INDEX JS -->
+
+  <script src="static/index.js"></script>
+</body>
+
+</html>

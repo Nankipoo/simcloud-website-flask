@@ -1,0 +1,1 @@
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\thomas\Documents\keys\project-simcloud-357621-b223c0d74a81.json"

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- IMPORT FAVICON -->
+
+  <link rel="icon
+  " href="static/favicon-48x48.png" />
+
+  <!-- STYLES CSS -->
+
+  <link rel="stylesheet" href="static/index-styles.css" />
+
+  <!-- BOOTSTRAP 4.0 CSS -->
+
+  <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <title>
+    Sim Cloud :: Bulk Simcard Recharge Portal :: Airtime & Data Recharges
+  </title>
+</head>
+
+<body>
+  <!-- NAVIGATION BAR -->
+
+  <div class="navigation-bar">
+    <nav class="bar-nav navbar navbar-expand-lg navbar-light fixed-top navigation-bar-background">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img class="logo-image" src="static/sim-cloud-logo-small.png" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('register')}}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('login')}}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('pricing')}}">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://sacoronavirus.co.za/" target="_blank">coronavirus.co.za</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- MAIN IMAGE -->
+
+  <div class="main-image">
+    <img class="container sims-image" src="static/bulk-airtime-prepaid-recharge-portal.png" alt="" srcset="" />
+  </div>
+
+  <!-- RECHARGE SIMCARD -->
+
+  <div class="custom1-blue-background">
+    <div class="container box">
+      <h1 class="whitesmoke-heading-xxlarge">
+        <span class="custom1-blue-text"> RECHARGE</span> AND MANAGE YOUR
+        <span class="custom1-gold-text"> SIMCARD </span> FLEET ANYWHERE.
+        <span class="custom1-blue-text"> ANYTIME</span>.
+      </h1>
+      <p class="whitesmoke-text">
+        Do you manage a fleet of mobile phones or devices? SIMcloud takes the
+        hassle out of SIM fleet management, and it's
+        <span class="bold-whitesmoke-text">free</span>. Now you can manage,
+        recharge and track spending on your Simcards with a single, secure
+        login to the SIMcloud platform.
+      </p>
+    </div>
+  </div>
+
+  <!-- SMALL IMAGES -->
+
+  <div class="custom2-blue-background">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <img class="small-icon-images" src="static/simcloud-icons-arrow.png" alt="" srcset="" />
+
+            <h2 class="whitesmoke-heading-xlarge">RECHARGE SIM CARDS</h2>
+            <p class="whitesmoke-text">
+              Recharge any quantity of mobile numbers with airtime and data
+              with
+              <span class="bold-whitesmoke-text"> one click </span>
+            </p>
+          </div>
+
+          <div class="box">
+            <img class="small-icon-images" src="static/simcloud-icons-spanner.png" alt="" srcset="" />
+
+            <h2 class="whitesmoke-heading-xlarge">MANAGE NUMBERS</h2>
+            <p class="whitesmoke-text">
+              Create, maintain and track your mobile numbers in our
+              <span class="bold-whitesmoke-text"> user-friendly portal </span>
+            </p>
+          </div>
+          <div class="box">
+            <img class="small-icon-images" src="static/simcloud-icons-bars.png" alt="" srcset="" />
+
+            <h2 class="whitesmoke-heading-xlarge">NETWORK LOOKUP TOOL</h2>
+            <p class="whitesmoke-text">
+              You can look up the network of any simcard for free.
+              <a href="/"><span class="bold-underlined-whitesmoke-text click-here">Click here</span></a>
+              to try it
+            </p>
+          </div>
+          <div class="box">
+            <img class="small-icon-images" src="static/simcloud-icons-ticket.png" alt="" srcset="" />
+
+            <h2 class="whitesmoke-heading-xlarge">NO MONTHLY FEES</h2>
+            <p class="whitesmoke-text">
+              We do not charge you anything to use this service. There are
+              <span class="bold-whitesmoke-text">no hidden costs</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW -->
+
+  <div class="custom1-blue-background">
+    <div class="container box">
+      <h1 class="whitesmoke-heading-xxlarge">
+        <span class="bold-whitesmoke-text">HOW</span> IT WORKS
+      </h1>
+      <p class="whitesmoke-text">
+        A simple, free online registration will give you a secure login to
+        your own SIMcloud wallet and management portal. Top up your wallet in
+        real time by making a deposit into the SIMcloud bank account with your
+        registered cell number as the unique reference number. A verification
+        process may follow your very first payment. After verification, all
+        subsequent payments will be applied instantly, 24/7. Now capture and
+        organize all the mobile numbers in your fleet into convenient
+        operational lists. To recharge, select the list or individual numbers,
+        choose the amount and hit GO… your entire list will be recharged while
+        you make the coffee. Edit and manage your lists and track spending per
+        mobile number. Monthly Tax Invoices and reports are accessible online.
+      </p>
+      <button class="btn btn-primary" type="button" class="btn btn-primary btn-lg"
+        onclick="location.href='//127.0.0.1:5500/register.html'">
+        Start Recharging
+      </button>
+    </div>
+  </div>
+
+  <!-- PERFECT TOOL -->
+
+  <div class="custom2-blue-background">
+    <div class="container box">
+      <h1 class="whitesmoke-heading-xxlarge">
+        SIMCLOUD IS <span class="bold-whitesmoke-text">THE PERFECT TOOL</span>
+      </h1>
+      <ul>
+        <li class="whitesmoke-text">
+          If you are running a business and want to recharge mobile numbers
+          for your employees or field agents
+        </li>
+        <li class="whitesmoke-text">
+          If you are a school and need to keep staff and students connected
+        </li>
+        <li class="whitesmoke-text">
+          If you manage a fleet of vehicles and need to recharge the drivers'
+          mobile phones
+        </li>
+        <li class="whitesmoke-text">
+          If you use SIM’s for telemetry / remote monitoring, or in IOT
+          (Internet of Things) devices
+        </li>
+        <li class="whitesmoke-text">
+          If you use data or airtime for marketing, promotions or loyalty
+          rewards. (Also refer to the Freepaid API for seamless integration)
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+
+  <div class="custom1-blue-background">
+    <div class="container box">
+      <h1 class="whitesmoke-heading-xxlarge">
+        <span class="bold-whitesmoke-text">FEATURES</span> INCLUDE:
+      </h1>
+      <ul>
+        <li class="whitesmoke-text">
+          24/7 online availability for recharges.
+        </li>
+        <li class="whitesmoke-text">
+          Instant Transaction Status reporting. Funds reversed immediately if
+          any recharge fails.
+        </li>
+        <li class="whitesmoke-text">No IT development required.</li>
+        <li class="whitesmoke-text">
+          No initiation or setup costs, no hidden fees, no monthly costs, no
+          admin fees, no hassle.
+        </li>
+        <li class="whitesmoke-text">
+          Support for all the networks in South Africa (Vodacom, MTN, Cell C,
+          Telkom and Virgin).
+        </li>
+        <li class="whitesmoke-text">
+          Your own in-house recharge facility at your fingertips.
+        </li>
+        <li class="whitesmoke-text">Online TAX Invoices supplied.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REAL-WORLD -->
+
+  <div class="custom2-blue-background">
+    <div class="container box">
+      <h1 class="whitesmoke-heading-xxlarge">
+        MORE <span class="bold-whitesmoke-text">REAL-WORLD</span> APPLICATIONS
+        OF SIMCLOUD AND THE FREEPAID API:
+      </h1>
+      <ul>
+        <li class="whitesmoke-text">
+          Instant Airtime rewards at POS when buying a promoted product
+        </li>
+        <li class="whitesmoke-text">
+          Airtime rewards for sharing an app on social networks
+        </li>
+        <li class="whitesmoke-text">
+          Increasing participation in customer surveys with airtime rewards.
+        </li>
+        <li class="whitesmoke-text">
+          Rewarding sales agents for achieving target
+        </li>
+        <li class="whitesmoke-text">Airtime as prizes in competitions</li>
+        <li class="whitesmoke-text">
+          Recharging mobile numbers in a SIM bank
+        </li>
+        <li class="whitesmoke-text">
+          Recharging individual connections in a call centre
+        </li>
+        <li class="whitesmoke-text">
+          Recharging IoT (Internet of Things) devices and Sim cards inside
+          sensors and other monitoring devices
+        </li>
+        <li class="whitesmoke-text">
+          Recharging Vehicle tracking devices and other location based
+          tracking systems
+        </li>
+        <li class="whitesmoke-text">
+          Recharging monitoring devices, e.g. borehole monitoring, weather
+          monitoring
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SIMCLOUD -->
+
+  <div class="custom1-blue-background">
+    <div class="container box">
+      <h1 class="whitesmoke-heading-xxlarge">
+        WHO IS <span class="bold-whitesmoke-text">SIMCLOUD </span>
+      </h1>
+      <p class="whitesmoke-text">
+        SIMCloud is a free bulk recharge innovation made available by FREEPAID
+        (PTY)LTD. Freepaid has been providing state-of-the-art Airtime
+        solutions to South African businesses, large and small, since 2003.
+        Our core business is providing virtual prepaid products to businesses
+        and entrepreneurs, through our innovative proprietary distribution
+        solutions. Our clients range from the small street vendor to listed
+        corporations and our trusted solutions quietly power a vast number of
+        Point-of-Sale systems and delivery platforms in South Africa. Freepaid
+        has developed the SIMCloud solution with sim fleet owners in mind. It
+        uses Freepaid’s robust and proven technology to organize and recharge
+        multiple mobile numbers in real time with a single command. Whether
+        you have to manage and recharge a fleet of SIMs regularly, or are
+        running a once-off marketing campaign, SIMcloud makes it easy, with no
+        technical expertise required.
+      </p>
+    </div>
+  </div>
+
+  <!-- CREDIT FOOTER -->
+
+  <footer>
+    <div class="container">
+      <p class="whitesmoke-text-credits">
+        Powered by FREEPAID (PTY) LTD. 2022 | Office Number: 087 073 6555
+        <br />
+        104, Building Five, Tygervalley Chambers, 27 Willie van Schoor Drive,
+        Bellville, Western Cape
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP 4.0, JQUERY 3.2.1 JS -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- INDEX JS -->
+
+  <script src="static/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+/* NAVIGATION BAR */
+
+.navigation-bar-background {
+  background-color: #45788a;
+}
+
+.bar-nav {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*REGISTRATION*/
+
+.terms-main {
+  margin: 0;
+  padding: 0;
+  background-color: #0d6a88;
+}
+
+.whitesmoke-heading-xxlarge {
+  color: whitesmoke;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: normal;
+}
+
+.whitesmoke-heading-xlarge {
+  color: whitesmoke;
+  font-size: x-large;
+  text-align: center;
+  font-weight: normal;
+}
+
+.whitesmoke-text-left {
+  color: whitesmoke;
+  font-size: large;
+  text-align: left;
+}
+
+.whitesmoke-text-center {
+  color: whitesmoke;
+  font-size: large;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.custom-blue-background {
+  background-color: #0a4f66;
+  border-radius: 1rem;
+}
+
+.custom2-blue-background {
+  background-color: #0d6a88;
+}
+
+.card-retainer {
+  padding-bottom: 4rem;
+}
+
+/*TERMS AND CONDITONS*/
+
+.submit-button {
+  margin: 1.5rem;
+}
+
+.bold-underlined-whitesmoke-text {
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*CREDIT FOOTER*/
+
+.whitesmoke-text-credits {
+  color: whitesmoke;
+  font-size: medium;
+}
+
+/*Globals*/
+
+h1,
+h2 {
+  line-height: 2rem;
+  margin: 0;
+  padding-top: 8rem;
+}
+
+div {
+  text-align: center;
+}
+
+label {
+  color: whitesmoke;
+  font-size: large;
+}
+
+footer {
+  margin-top: 2rem;
+  background-color: grey;
+  text-align: center;
+  line-height: 2rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+td {
+  color: whitesmoke;
+  font-size: medium;
+}
+
+.container {
+  display: inline-block;
+}
+
+.form-group {
+  margin: 2rem;
+}

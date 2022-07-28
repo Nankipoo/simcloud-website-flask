@@ -1,0 +1,161 @@
+/* NAVIGATION BAR */
+
+.navigation-bar-background {
+  background-color: #45788a;
+}
+
+.bar-nav {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MAIN IMAGE */
+
+.main-image {
+  background-color: #0d6a88;
+  width: 100%;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+}
+
+/* RECHARGE SIMCARD */
+
+.custom1-blue-background {
+  background-color: #0a4f66;
+  padding: 2rem;
+}
+
+.whitesmoke-heading-xxlarge {
+  color: whitesmoke;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: normal;
+}
+
+.custom1-blue-text {
+  color: #149ecc;
+}
+
+.custom1-gold-text {
+  color: #febf30;
+}
+
+.whitesmoke-text {
+  color: whitesmoke;
+  font-size: large;
+  text-align: left;
+}
+
+.bold-whitesmoke-text {
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+/* SMALL IMAGES */
+
+.custom2-blue-background {
+  background-color: #0d6a88;
+  padding: 2rem;
+}
+
+.box {
+  opacity: 0;
+  transition: 250ms ease-in-out transform, 250ms ease-in-out opacity;
+}
+
+.show-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.small-icon-images {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 10rem;
+}
+
+.whitesmoke-heading-xlarge {
+  color: whitesmoke;
+  font-size: x-large;
+  text-align: center;
+  font-weight: normal;
+}
+
+.bold-underlined-whitesmoke-text {
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*REGISTER*/
+
+.register {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+/*CREDIT FOOTER*/
+
+.whitesmoke-text-credits {
+  color: whitesmoke;
+  font-size: medium;
+  margin: 0;
+}
+
+/* 4K */
+
+@media only screen and (max-width: 2560px) {
+}
+
+/* Laptop L*/
+
+@media only screen and (max-width: 1440px) {
+}
+
+/* Laptop */
+
+@media only screen and (max-width: 1024px) {
+}
+
+/* Tablet */
+
+@media only screen and (max-width: 768px) {
+}
+
+/* Mobile L */
+
+@media only screen and (max-width: 425px) {
+}
+
+/* Mobile M */
+
+@media only screen and (max-width: 375px) {
+}
+
+/* Mobile S */
+
+@media only screen and (max-width: 320px) {
+}
+
+/*Globals*/
+
+div {
+  text-align: center;
+  justify-content: center;
+}
+
+h1,
+h2,
+p {
+  line-height: 2rem;
+  padding: 1rem;
+}
+
+footer {
+  background-color: grey;
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+}

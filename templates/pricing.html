@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- IMPORT FAVICON -->
+
+    <link rel="icon
+  " href="favicon/favicon-48x48.png" />
+
+    <!-- STYLES CSS -->
+
+    <link rel="stylesheet" href="static/pricing-styles.css" />
+
+    <!-- BOOTSTRAP 4.0 CSS -->
+
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <title>
+        Sim Cloud :: Bulk Simcard Recharge Portal :: Airtime & Data Recharges
+    </title>
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+
+    <div class="navigation-bar">
+        <nav class="bar-nav navbar navbar-expand-lg navbar-light fixed-top navigation-bar-background">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img class="logo-image" src="images/sim-cloud-logo-small.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('register')}}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://sacoronavirus.co.za/" target="_blank">coronavirus.co.za</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!--AVAILABLE AIRTIME AND DATA BUNDLES-->
+
+    <div class="terms-main">
+        <div class="container custom2-blue-background">
+            <h1 class="whitesmoke-heading-xxlarge">Available Airtime and Data Bundles</h1>
+            <br>
+            <p class="whitesmoke-text-left">Airtime is sold at face value and is available from us in whole Rands from
+                R2 to R999.
+                <br>
+                <br>
+                Data bundles are sold in the denominations and prices listed below. Airtime and data pricing is
+                legislated and approved by ICASA so the prices you see here are the same as elsewhere in S.A. just a
+                lot
+                more convenient.
+                <br>
+                <br>
+                NOTE: Unlike the banks, we impose ZERO transaction fees for airtime or data top ups.
+                <br>
+                <br>
+                <strong>No admin fees, monthly fees or hidden costs apply.</strong>
+                <br>
+                <br>
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="card-retainer col-sm-12 col-md-12 col-lg-9 mx-auto ">
+                        <div class="card-body custom-blue-background">
+                            <div class="table-responsive mt-4">
+                                <table class="table table-sm table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="whitesmoke-heading-xlarge" scope="col">Network</th>
+                                            <th class="whitesmoke-heading-xlarge" scope="col">Bundle Size</th>
+                                            <th class="whitesmoke-heading-xlarge" scope="col">Bundle Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>250MB-R6</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>100MB-R19</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>350MB-R49</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>1+1GB-R85</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>1+.5+1.5GB-R99</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>2+2GB-R149</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>3+3GB-R199</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>4+4GB-R249</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>6+6GB-R299</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>20GB-R799</td>
+                                            <td>365-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>30GB-R899</td>
+                                            <td>365-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>50GB-R1099</td>
+                                            <td>365-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>100GB-R1599</td>
+                                            <td>365-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-cellc</td>
+                                            <td>200GB-R1999</td>
+                                            <td>365-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>35+35MB-R7-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>100MB-R10</td>
+                                            <td>Weekend Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>75+75MB-R14-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>20MB-R15.15</td>
+                                            <td>FreeMe Boost Weekly</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>200MB-R19</td>
+                                            <td>Weekend Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>150+150MB-R29-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>300+300MB-R49-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>250MB-R59.50</td>
+                                            <td>FreeMe Boost Weekly</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>500+500MB-R69-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>1+1GB-R79-2mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>1.5+1.5GB-R89-2mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>2+2GB-R139-3mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>3+3GB-R199-3mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>5+5GB-R299-3mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>10+10GB-R469-3mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>20GB-R699-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>50GB-R1499-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-telkom</td>
+                                            <td>100GB-R2499-7mth</td>
+                                            <td>Once Off Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>5MB-R4</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>40MB-R10</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>120MB-R17</td>
+                                            <td>Weekly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>100MB-R20</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>200MB-R29</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>500MB-R35</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>350MB-R40</td>
+                                            <td>Weekly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>350MB-R49</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>500MB-R55</td>
+                                            <td>Weekly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>1GB-R59</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>500MB-R69</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>1GB-R70</td>
+                                            <td>Weekly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>1GB-85</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>1.5GB-R99</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>2GB-R109</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>1GB-R110</td>
+                                            <td>Fort Nightly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>5GB-R139</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>2+2GB-R149</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>300MB-R159</td>
+                                            <td>6mth Pay-once Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>3+3GB-R199</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>10GB-R209</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>5+5GB-R299</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>6+6GB-R349</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>1GB-R419</td>
+                                            <td>6mth Pay-once Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>10+10GB-R469</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>20+20GB-R599</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>30+30GB-R699</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>50+50GB-R799</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-mtn</td>
+                                            <td>100+100GB-R999</td>
+                                            <td>Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>10min-R2(on net)</td>
+                                            <td>Power Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>50MB-R4</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>20MB-R5</td>
+                                            <td>Same Day Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>100MB-R7</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>60MB-R9</td>
+                                            <td>Same Day Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>50MB-R12</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>250MB-R14</td>
+                                            <td>Night Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>100MB-R15</td>
+                                            <td>Same Day Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>100MB-R17</td>
+                                            <td>Weekly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>200MB-R29</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>250MB-R35</td>
+                                            <td>Weekly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>350MB-R49</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>500MB-R69</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>1GB-R85</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>2GB-R120</td>
+                                            <td>Weekly Data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>2GB-R149</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>4GB-R249</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>6GB-R349</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>10GB-R469</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>15GB-R529</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>30GB-R699</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>50GB-R799</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pd-vodacom</td>
+                                            <td>100GB-R999</td>
+                                            <td>30-day Data Bundle</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CREDIT FOOTER -->
+
+        <footer>
+            <div class="container">
+                <p class="whitesmoke-text-credits">
+                    Powered by FREEPAID (PTY) LTD. 2022 | Office Number: 087 073 6555
+                    <br />
+                    104, Building Five, Tygervalley Chambers, 27 Willie van Schoor Drive,
+                    Bellville, Western Cape
+                </p>
+            </div>
+        </footer>
+
+        <!-- BOOTSTRAP 4.0, JQUERY 3.2.1 JS -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+        <!-- INDEX JS -->
+
+        <script src="static/index.js"></script>
+</body>
+
+</html>
