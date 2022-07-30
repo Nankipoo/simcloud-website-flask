@@ -70,6 +70,7 @@ def add():
     kind = "Fruit"
     # The name/ID for the new entity
     name = "fruit1"
+    # ggg
     # The Cloud Datastore key for the new entity
     task_key = datastore_client.key(kind, name)
 
