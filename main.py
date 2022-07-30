@@ -14,7 +14,7 @@
 
 import datetime
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
