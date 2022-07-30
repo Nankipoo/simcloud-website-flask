@@ -14,7 +14,7 @@
 
 import datetime
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
@@ -30,7 +30,6 @@ app = Flask(__name__)
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
 def store_time(dt):
-
     entity = datastore.Entity(key=datastore_client.key('visit'))
     entity.update({
         'timestamp': dt
@@ -88,9 +87,8 @@ def index():
 
     return render_template ('index.html')
 
-@app.route("/register", methods=['POST', 'GET'])
+@app.route("/register")
 def register():
-    print request.form
     return render_template ('register.html')
 
 @app.route("/login")
