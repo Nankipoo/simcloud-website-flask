@@ -50,7 +50,7 @@ def fetch_times(limit):
 
 
 # [START gae_python38_datastore_render_times]
-# [START gae_python3_datastore_render_times]ggg
+# [START gae_python3_datastore_render_times]ggg frank is ger
 @app.route('/')
 def root():
     # Store the current access time in Datastore.
