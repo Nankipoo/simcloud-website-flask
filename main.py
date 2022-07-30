@@ -47,7 +47,7 @@ def fetch_times(limit):
     return times
 # [END gae_python3_datastore_store_and_fetch_times]
 # [END gae_python38_datastore_store_and_fetch_times]
-# GGGGGGGGGGGGGGGGGGGGGGGGGG
+
 
 # [START gae_python38_datastore_render_times]
 # [START gae_python3_datastore_render_times]
@@ -64,9 +64,27 @@ def root():
 # [END gae_python3_datastore_render_times]
 # [END gae_python38_datastore_render_times]
 
+@app.route("/add")
+def index():
+    # The kind for the new entity
+    kind = "Fruit"
+    # The name/ID for the new entity
+    name = "fruit1"
+    # The Cloud Datastore key for the new entity
+    task_key = datastore_client.key(kind, name)
+
+    # Prepares the new entity
+    task = datastore.Entity(key=task_key)
+    task["description"] = "Apple fruit"
+
+    # Saves the entity
+    datastore_client.put(task)
+    return render_template ('index.html')
+
     #Application linking routes
 @app.route("/index")
 def index():
+
     return render_template ('index.html')
 
 @app.route("/register")
