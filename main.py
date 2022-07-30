@@ -64,15 +64,15 @@ def root():
 # [END gae_python3_datastore_render_times]
 # [END gae_python38_datastore_render_times]
 
+
 @app.route("/add")
 def add():
     # The kind for the new entity
-    kind = "Fruit"
+    kind = "User"
     # The name/ID for the new entity
-    name = "fruit1"
-    # ggg
+    id = "username"
     # The Cloud Datastore key for the new entity
-    task_key = datastore_client.key(kind, name)
+    task_key = datastore_client.key(kind, id)
 
     # Prepares the new entity
     task = datastore.Entity(key=task_key)
@@ -80,31 +80,52 @@ def add():
 
     # Saves the entity
     datastore_client.put(task)
-    return render_template ('index.html')
+    return render_template('index.html')
 
-    #Application linking routes
+    # Application linking routes
+
+
 @app.route("/index")
 def index():
 
-    return render_template ('index.html')
+    return render_template('index.html')
 
-@app.route("/register")
+
+@app.route("/register", methods=['GET', 'POST'])
 def register():
-    return render_template ('register.html')
+
+    if request.method == 'POST':
+        print(request.form.to_dict())
+        # The kind for the new entity
+        kind = "User"
+        # The name/ID for the new entity
+        id = "username"
+        # The Cloud Datastore key for the new entity
+        task_key = datastore_client.key(kind, id)
+
+        # Prepares the new entity
+        task = datastore.Entity(key=task_key)
+        task["description"] = "Apple fruit"
+
+        # Saves the entity
+        datastore_client.put(task)
+    return render_template('register.html')
+
 
 @app.route("/login")
 def login():
-    return render_template ('login.html')
+    return render_template('login.html')
+
 
 @app.route("/pricing")
 def pricing():
-    return render_template ('pricing.html')
+    return render_template('pricing.html')
+
 
 @app.route("/terms")
 def terms():
-    return render_template ('terms-and-conditions.html')
+    return render_template('terms-and-conditions.html')
 
-#Push Comment
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
