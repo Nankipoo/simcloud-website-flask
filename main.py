@@ -65,7 +65,7 @@ def root():
 # [END gae_python38_datastore_render_times]
 
 @app.route("/add")
-def index():
+def add():
     # The kind for the new entity
     kind = "Fruit"
     # The name/ID for the new entity
