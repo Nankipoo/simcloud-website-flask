@@ -114,8 +114,8 @@ def register():
         user["id_number"] = request.form.get("id_number")
         user["email_address"] = request.form.get("email_address")
         user["business_name"] = request.form.get("business_name")
-        user["business_registration"] = request.form.get(
-            "business_registration")
+        user["business_registration_number"] = request.form.get(
+            "business_registration_number")
         user["vat_number"] = request.form.get("vat_number")
         user["address"] = request.form.get("address")
         user["password"] = request.form.get("password")
