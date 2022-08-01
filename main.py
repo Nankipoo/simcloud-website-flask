@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import datetime
+import random
 
 from flask import Flask, render_template, request
 
@@ -98,17 +99,30 @@ def register():
         print(request.form.to_dict())
         # The kind for the new entity
         kind = "User"
+        n = random.randint(0, 10000)
         # The name/ID for the new entity
-        id = "username"
+        _id = "username" + str(n)
         # The Cloud Datastore key for the new entity
-        task_key = datastore_client.key(kind, id)
+        user_key = datastore_client.key(kind, _id)
 
         # Prepares the new entity
-        task = datastore.Entity(key=task_key)
-        task["description"] = "Apple fruit"
+        user = datastore.Entity(key=user_key)
+
+        user["firstname"] = request.form.get("firstname")
+        user["surname"] = request.form.get("surname")
+        user["cell_number"] = request.form.get("cell_number")
+        user["id_number"] = request.form.get("id_number")
+        user["email_address"] = request.form.get("email_address")
+        user["business_name"] = request.form.get("business_name")
+        user["business_registration_number"] = request.form.get(
+            "business_registration_number")
+        user["vat_number"] = request.form.get("vat_number")
+        user["address"] = request.form.get("address")
+        user["password"] = request.form.get("password")
+        user["confirm_password"] = request.form.get("confirm_password")
 
         # Saves the entity
-        datastore_client.put(task)
+        datastore_client.put(user)
     return render_template('register.html')
 
 
