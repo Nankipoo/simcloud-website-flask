@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import datetime
+
 import random
 
 from flask import Flask, render_template, request
@@ -20,16 +21,16 @@ from flask import Flask, render_template, request
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
 from google.cloud import datastore
-
 datastore_client = datastore.Client()
 
 # [END gae_python3_datastore_store_and_fetch_times]
 # [END gae_python38_datastore_store_and_fetch_times]
 app = Flask(__name__)
 
-
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
+
+
 def store_time(dt):
     entity = datastore.Entity(key=datastore_client.key('visit'))
     entity.update({
@@ -49,9 +50,9 @@ def fetch_times(limit):
 # [END gae_python3_datastore_store_and_fetch_times]
 # [END gae_python38_datastore_store_and_fetch_times]
 
-
 # [START gae_python38_datastore_render_times]
 # [START gae_python3_datastore_render_times]ggg frank is ger
+
 @app.route('/')
 def root():
     # Store the current access time in Datastore.
@@ -66,44 +67,27 @@ def root():
 # [END gae_python38_datastore_render_times]
 
 
-@app.route("/add")
-def add():
-    # The kind for the new entity
-    kind = "User"
-    # The name/ID for the new entity
-    id = "username"
-    # The Cloud Datastore key for the new entity
-    task_key = datastore_client.key(kind, id)
-
-    # Prepares the new entity
-    task = datastore.Entity(key=task_key)
-    task["description"] = "Apple fruit"
-
-    # Saves the entity
-    datastore_client.put(task)
-    return render_template('index.html')
-
-    # Application linking routes
-
-
 @app.route("/index")
 def index():
 
     return render_template('index.html')
 
-
-@app.route("/register", methods=['GET', 'POST'])
+""" @app.route("/register", methods=['GET', 'POST'])
 def register():
 
     if request.method == 'POST':
         print(request.form.to_dict())
+        
         # The kind for the new entity
         kind = "User"
+
         n = random.randint(0, 10000)
+
         # The name/ID for the new entity
-        _id = "username" + str(n)
+        user_id = "username" + str(n)
+
         # The Cloud Datastore key for the new entity
-        user_key = datastore_client.key(kind, _id)
+        user_key = datastore_client.key(kind, user_id)
 
         # Prepares the new entity
         user = datastore.Entity(key=user_key)
@@ -123,12 +107,11 @@ def register():
 
         # Saves the entity
         datastore_client.put(user)
-    return render_template('register.html')
-
+    return render_template('register.html') """
 
 @app.route("/login")
 def login():
-    return render_template('login.html')
+    return render_template("login.html")
 
 
 @app.route("/pricing")
