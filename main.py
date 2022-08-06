@@ -18,11 +18,14 @@ import random
 
 from flask import Flask, render_template, request
 
+
+
+import datetime
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
 from google.cloud import datastore
 datastore_client = datastore.Client()
-
+from models import User
 # [END gae_python3_datastore_store_and_fetch_times]
 # [END gae_python38_datastore_store_and_fetch_times]
 app = Flask(__name__)
@@ -55,6 +58,7 @@ def fetch_times(limit):
 
 @app.route('/')
 def root():
+
     # Store the current access time in Datastore.
     store_time(datetime.datetime.now(tz=datetime.timezone.utc))
 
@@ -109,8 +113,33 @@ def register():
         datastore_client.put(user)
     return render_template('register.html')
 
-@app.route("/login")
+
+@app.route("/register2", methods=['GET', 'POST'])
+def register2():
+    from datastore_entity import DatastoreEntity, EntityValue
+    if request.method == 'POST':
+        print(request.form.to_dict())
+
+        # The kind for the new entity
+        user = User()
+        user.cell_no = request.form.get("cell_number")
+        user.email = request.form.get("email_address")  # assign attribute value as a type of EntityValue
+        user.password = request.form.get("password")
+        user.save()
+    return render_template('register.html')
+
+@app.route("/login", methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        print(request.form.to_dict())
+        cell_no = request.form.get("cellNumberInput")
+        password = request.form.get("passwordInput")
+        user = User().get_obj('cell_no', cell_no)
+        print(user)
+
+
+        ##cellNumberInput
+       ## user = User().get_obj('username', 'komla')
     return render_template("login.html")
 
 
