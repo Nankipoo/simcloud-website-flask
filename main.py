@@ -72,7 +72,7 @@ def index():
 
     return render_template('index.html')
 
-""" @app.route("/register", methods=['GET', 'POST'])
+@app.route("/register", methods=['GET', 'POST'])
 def register():
 
     if request.method == 'POST':
@@ -107,7 +107,7 @@ def register():
 
         # Saves the entity
         datastore_client.put(user)
-    return render_template('register.html') """
+    return render_template('register.html')
 
 @app.route("/login")
 def login():
