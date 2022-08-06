@@ -3,5 +3,8 @@ indexes:
 - kind: User
   ancestor: no
   properties:
+  - name: email
+  - name: password
   - name: cell_no
-    direction: desc
+  - name: date_created
+  - name: active

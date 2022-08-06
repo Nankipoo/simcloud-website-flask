@@ -111,7 +111,7 @@ def register():
 
         # Saves the entity
         datastore_client.put(user)
-<<<<<<< Updated upstream
+
     return render_template('register.html')
 
 
@@ -120,10 +120,6 @@ def register2():
     from datastore_entity import DatastoreEntity, EntityValue
     if request.method == 'POST':
         print(request.form.to_dict())
-=======
-    return render_template('register.html') "
->>>>>>> Stashed changes
-
         # The kind for the new entity
         user = User()
         user.cell_no = request.form.get("cell_number")
