@@ -16,7 +16,7 @@ import datetime
 
 import random
 
-from flask import Flask, render_template, request, redirect
+from lib.flask import Flask, render_template, request, redirect
 
 from lib.flask_login import (
     LoginManager,
@@ -26,13 +26,10 @@ from lib.flask_login import (
     login_required
 )
 
-
-
 import datetime
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
-from google.cloud import datastore
-datastore_client = datastore.Client()
+
 from lib.google.cloud import ndb
 from models import User
 # [END gae_python3_datastore_store_and_fetch_times]
@@ -43,43 +40,12 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-# [START gae_python38_datastore_store_and_fetch_times]
-# [START gae_python3_datastore_store_and_fetch_times]
 
-
-def store_time(dt):
-    entity = datastore.Entity(key=datastore_client.key('visit'))
-    entity.update({
-        'timestamp': dt
-    })
-
-    datastore_client.put(entity)
-
-
-def fetch_times(limit):
-    query = datastore_client.query(kind='visit')
-    query.order = ['-timestamp']
-
-    times = query.fetch(limit=limit)
-
-    return times
-# [END gae_python3_datastore_store_and_fetch_times]
-# [END gae_python38_datastore_store_and_fetch_times]
-
-# [START gae_python38_datastore_render_times]
-# [START gae_python3_datastore_render_times]ggg frank is ger
 
 @app.route('/')
 def root():
+    return redirect("/index")
 
-    # Store the current access time in Datastore.
-    store_time(datetime.datetime.now(tz=datetime.timezone.utc))
-
-    # Fetch the most recent 10 access times from Datastore.
-    times = fetch_times(10)
-
-    return render_template(
-        'index.html', times=times)
 # [END gae_python3_datastore_render_times]
 # [END gae_python38_datastore_render_times]
 
