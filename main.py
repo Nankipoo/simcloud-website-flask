@@ -16,7 +16,15 @@ import datetime
 
 import random
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
+
+from lib.flask_login import (
+    LoginManager,
+    logout_user,
+    login_user,
+    current_user,
+    login_required
+)
 
 
 
@@ -30,6 +38,10 @@ from models import User
 # [END gae_python3_datastore_store_and_fetch_times]
 # [END gae_python38_datastore_store_and_fetch_times]
 app = Flask(__name__)
+app.secret_key = 'simcloud6666'
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
 
 # [START gae_python38_datastore_store_and_fetch_times]
 # [START gae_python3_datastore_store_and_fetch_times]
@@ -116,6 +128,12 @@ def register():
     return render_template('register.html')
 
 
+@login_manager.user_loader
+def load_user(user_id):
+    client = ndb.Client()
+    with client.context():
+        return User.get_by_id(int(user_id))
+
 @app.route("/register2", methods=['GET', 'POST'])
 def register2():
 
@@ -132,25 +150,43 @@ def register2():
 
     return render_template('register.html')
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect("/index")
+
+@app.route("/dashboard", methods=['GET', 'POST'])
+def dashboard():
+    return render_template("dashboard.html")
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+
+    if current_user.is_authenticated:
+        return redirect("/index")
     ## to update indexes: gcloud datastore indexes create path/to/index.yaml
     if request.method == 'POST':
-        print(request.form.to_dict())
-        cell_no = request.form.get("cellNumberInput")
-        password = request.form.get("passwordInput")
+
         client = ndb.Client()
         with client.context():
 
-            records = User.query().fetch()
+            print(request.form.to_dict())
+            cell_no = request.form.get("cellNumberInput")
+            password = request.form.get("passwordInput")
 
+
+            records = User.query().fetch()
+            user = None
             for r in records:
                 if r.cell_number == cell_no:
-                    print(r.email_address)
+                    user = r
 
+            if user is not None:
+                login_user(user)
+                print("logging in user")
+                return redirect("/dashboard")
 
-
-        ##cellNumberInput
+    ##cellNumberInput
        ## user = User().get_obj('username', 'komla')
     return render_template("login.html")
 
