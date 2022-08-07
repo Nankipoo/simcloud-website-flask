@@ -124,7 +124,7 @@ def dashboard():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-
+    ## TODO: add check if user already logged in
  ##   if current_user.is_authenticated:
         ## user already logged in
     ##    return redirect("/index")
