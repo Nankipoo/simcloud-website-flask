@@ -125,9 +125,9 @@ def dashboard():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
 
-    if current_user.is_authenticated:
+ ##   if current_user.is_authenticated:
         ## user already logged in
-        return redirect("/index")
+    ##    return redirect("/index")
     ## to update indexes: gcloud datastore indexes create path/to/index.yaml
     if request.method == 'POST':
 
