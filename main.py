@@ -102,14 +102,13 @@ def load_user(user_id):
 def register():
 
     if request.method == 'POST':
-        print(request.form.to_dict())
-        # The kind for the new entity
         client = ndb.Client()
         with client.context():
-            contact1 = User(email_address=request.form.get("email_address"),
+            ## TODO: add validation - check for duplicates, check if confirm password matches
+            user_record = User(email_address=request.form.get("email_address"),
                                cell_number=request.form.get("cell_number"),
                                password=request.form.get("password"))
-            contact1.put() ## save user to data to database
+            user_record.put() ## save user to data to database
 
 
     return render_template('register.html')
@@ -127,6 +126,7 @@ def dashboard():
 def login():
 
     if current_user.is_authenticated:
+        ## user already logged in
         return redirect("/index")
     ## to update indexes: gcloud datastore indexes create path/to/index.yaml
     if request.method == 'POST':
@@ -134,10 +134,8 @@ def login():
         client = ndb.Client()
         with client.context():
 
-            print(request.form.to_dict())
             cell_no = request.form.get("cellNumberInput")
             password = request.form.get("passwordInput")
-
 
             records = User.query().fetch()
             user = None
@@ -146,12 +144,16 @@ def login():
                     user = r
 
             if user is not None:
-                login_user(user)
-                print("logging in user")
-                return redirect("/dashboard")
+                ## user found in database
+                ## check if password matches
+                if password == user.password:
+                    # password matches now login user
+                    login_user(user)
+                    return redirect("/dashboard")
+
 
     ##cellNumberInput
-       ## user = User().get_obj('username', 'komla')
+    ## user = User().get_obj('username', 'komla')
     return render_template("login.html")
 
 
