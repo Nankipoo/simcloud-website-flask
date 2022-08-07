@@ -142,10 +142,11 @@ def login():
         client = ndb.Client()
         with client.context():
 
-            query = User.query()
+            records = User.query().fetch()
 
-            names = [c.cell_number for c in query.fetch()]
-            print(names)
+            for r in records:
+                if r.cell_number == cell_no:
+                    print(r.email_address)
 
 
 
