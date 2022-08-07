@@ -89,43 +89,7 @@ def index():
 
     return render_template('index.html')
 
-@app.route("/register", methods=['GET', 'POST'])
-def register():
 
-    if request.method == 'POST':
-        print(request.form.to_dict())
-        
-        # The kind for the new entity
-        kind = "User"
-
-        n = random.randint(0, 10000)
-
-        # The name/ID for the new entity
-        user_id = "username" + str(n)
-
-        # The Cloud Datastore key for the new entity
-        user_key = datastore_client.key(kind, user_id)
-
-        # Prepares the new entity
-        user = datastore.Entity(key=user_key)
-
-        user["firstname"] = request.form.get("firstname")
-        user["surname"] = request.form.get("surname")
-        user["cell_number"] = request.form.get("cell_number")
-        user["id_number"] = request.form.get("id_number")
-        user["email_address"] = request.form.get("email_address")
-        user["business_name"] = request.form.get("business_name")
-        user["business_registration_number"] = request.form.get(
-            "business_registration_number")
-        user["vat_number"] = request.form.get("vat_number")
-        user["address"] = request.form.get("address")
-        user["password"] = request.form.get("password")
-        user["confirm_password"] = request.form.get("confirm_password")
-
-        # Saves the entity
-       ## datastore_client.put(user)
-
-    return render_template('register.html')
 
 
 @login_manager.user_loader
@@ -134,8 +98,8 @@ def load_user(user_id):
     with client.context():
         return User.get_by_id(int(user_id))
 
-@app.route("/register2", methods=['GET', 'POST'])
-def register2():
+@app.route("/register", methods=['GET', 'POST'])
+def register():
 
     if request.method == 'POST':
         print(request.form.to_dict())
