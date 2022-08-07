@@ -25,6 +25,7 @@ import datetime
 # [START gae_python3_datastore_store_and_fetch_times]
 from google.cloud import datastore
 datastore_client = datastore.Client()
+from lib.google.cloud import ndb
 from models import User
 # [END gae_python3_datastore_store_and_fetch_times]
 # [END gae_python38_datastore_store_and_fetch_times]
@@ -110,32 +111,42 @@ def register():
         user["confirm_password"] = request.form.get("confirm_password")
 
         # Saves the entity
-        datastore_client.put(user)
+       ## datastore_client.put(user)
 
     return render_template('register.html')
 
 
 @app.route("/register2", methods=['GET', 'POST'])
 def register2():
-    from datastore_entity import DatastoreEntity, EntityValue
+
     if request.method == 'POST':
         print(request.form.to_dict())
         # The kind for the new entity
-        user = User()
-        user.cell_no = request.form.get("cell_number")
-        user.email = request.form.get("email_address")  # assign attribute value as a type of EntityValue
-        user.password = request.form.get("password")
-        user.save()
+        client = ndb.Client()
+        with client.context():
+            contact1 = User(email_address=request.form.get("email_address"),
+                               cell_number=request.form.get("cell_number"),
+                               password=request.form.get("password"))
+            contact1.put() ## save user to data to database
+
+
     return render_template('register.html')
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    ## to update indexes: gcloud datastore indexes create path/to/index.yaml
     if request.method == 'POST':
         print(request.form.to_dict())
         cell_no = request.form.get("cellNumberInput")
         password = request.form.get("passwordInput")
-        user = User().get_obj('cell_no', cell_no)
-        print(user)
+        client = ndb.Client()
+        with client.context():
+
+            query = User.query()
+
+            names = [c.cell_number for c in query.fetch()]
+            print(names)
+
 
 
         ##cellNumberInput

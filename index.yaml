@@ -1,10 +1,6 @@
 indexes:
 
 - kind: User
-  ancestor: no
   properties:
-  - name: email
-  - name: password
-  - name: cell_no
-  - name: date_created
-  - name: active
+    - name: email
+    - name: cell_no
