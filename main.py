@@ -43,11 +43,8 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
-
-
 @login_manager.user_loader
 def load_user(user_id):
-
     ndb_client = ndb.Client()
     with ndb_client.context():
         return User.get_by_id(int(user_id))
@@ -74,9 +71,17 @@ def register():
         client = ndb.Client()
         with client.context():
             ## TODO: add validation - check for duplicates, check if confirm password matches
-            user_record = User(email_address=request.form.get("email_address"),
+            user_record = User(name=request.form.get("name"),
+                               surname=request.form.get("surname"),
                                cell_number=request.form.get("cell_number"),
-                               password=request.form.get("password"))
+                               id_number=request.form.get("id_number"),
+                               email_address=request.form.get("email_address"),
+                               business_address=request.form.get("business_address"),
+                               business_registration_number=request.form.get("business_registration_number"),
+                               vat_number=request.form.get("vat_number"),
+                               address=request.form.get("address"),
+                               password=request.form.get("password"),
+                               confirm_password=request.form.get("confirm_password"))
             user_record.put()  ## save user to data to database
 
     return render_template('register.html')
@@ -84,7 +89,7 @@ def register():
 
 @app.route("/logout")
 def logout():
-   ## logout_user()
+    ## logout_user()
     return redirect("/index")
 
 
@@ -119,7 +124,7 @@ def login():
                 ## check if password matches
                 if password == user.password:
                     # password matches now login user
-                   ## login_user(user)
+                    ## login_user(user)
                     return redirect("/dashboard")
 
     ##cellNumberInput

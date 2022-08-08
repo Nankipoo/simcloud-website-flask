@@ -11,9 +11,18 @@ import csv
 
 
 class User(ndb.Model):
-    email_address = ndb.StringProperty()
+    name = ndb.StringProperty()
+    surname = ndb.StringProperty()
     cell_number = ndb.StringProperty()
+    id_number = ndb.StringProperty()
+    email_address = ndb.StringProperty()
+    business_address = ndb.StringProperty()
+    business_registration_number = ndb.StringProperty()
+    vat_number = ndb.StringProperty()
+    address = ndb.StringProperty()
     password = ndb.StringProperty()
+    confirm_password = ndb.StringProperty()
+
     @property
     def is_authenticated(self):
         """
