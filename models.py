@@ -2,6 +2,8 @@
 
 import datetime
 
+from google.cloud.ndb import StringProperty
+
 from lib.google.cloud import ndb
 
 import os
@@ -9,9 +11,8 @@ import sys
 import io
 import csv
 
-
 class User(ndb.Model):
-    name = ndb.StringProperty()
+    firstname: StringProperty = ndb.StringProperty()
     surname = ndb.StringProperty()
     cell_number = ndb.StringProperty()
     id_number = ndb.StringProperty()

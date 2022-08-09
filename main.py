@@ -71,7 +71,7 @@ def register():
         client = ndb.Client()
         with client.context():
             ## TODO: add validation - check for duplicates, check if confirm password matches
-            user_record = User(name=request.form.get("name"),
+            user_record = User(firstname=request.form.get("firstname"),
                                surname=request.form.get("surname"),
                                cell_number=request.form.get("cell_number"),
                                id_number=request.form.get("id_number"),
